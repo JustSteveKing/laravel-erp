@@ -24,7 +24,8 @@
     "require": {
         "php": "^8.0",
         "illuminate/contracts": "^8.49",
-        "spatie/laravel-package-tools": "^1.9"
+        "spatie/laravel-package-tools": "^1.9",
+        "symfony/process": "^5.3"
     },
     "require-dev": {
         "brianium/paratest": "^6.3",
