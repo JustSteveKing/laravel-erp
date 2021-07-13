@@ -7,6 +7,7 @@ namespace JustSteveKing\Laravel\ERP\Actions;
 use Composer\InstalledVersions;
 use InvalidArgumentException;
 use JustSteveKing\Laravel\ERP\Models\Module;
+use JustSteveKing\Laravel\ERPContracts\Module\InstallerContract;
 use Throwable;
 
 class SyncModuleWithStorage
@@ -47,7 +48,7 @@ class SyncModuleWithStorage
 
         $interfaces = class_implements($installClass);
 
-        if (! in_array(\JustSteveKing\Laravel\ERPContracts\Module\InstallerContract::class, $interfaces)) {
+        if (! in_array(InstallerContract::class, $interfaces)) {
             static::failed(
                 message: "The module [$module->name] does not implement [\JustSteveKing\Laravel\ERPContracts\Module\InstallerContract] so cannot be installed.",
                 module: $module,

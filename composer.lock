@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc6d8798e3194ff946df165fd5ccb0ae",
+    "content-hash": "83d56d47423c941579b0a1ed2f93710f",
     "packages": [
         {
             "name": "brick/math",
@@ -482,6 +482,49 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "juststeveking/laravel-erp-contracts",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JustSteveKing/laravel-erp-contracts.git",
+                "reference": "d47383fffd9814960eefeb3f2644641f2d74847e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JustSteveKing/laravel-erp-contracts/zipball/d47383fffd9814960eefeb3f2644641f2d74847e",
+                "reference": "d47383fffd9814960eefeb3f2644641f2d74847e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JustSteveKing\\Laravel\\ERPContracts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve McDougall",
+                    "email": "juststevemcd@gmail.com",
+                    "homepage": "https://www.juststeveking.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package to use when building modules for the Laravel ERP package",
+            "support": {
+                "issues": "https://github.com/JustSteveKing/laravel-erp-contracts/issues",
+                "source": "https://github.com/JustSteveKing/laravel-erp-contracts/tree/main"
+            },
+            "time": "2021-07-13T20:56:12+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7558,7 +7601,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "juststeveking/laravel-erp-contracts": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
