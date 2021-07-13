@@ -8,6 +8,11 @@
             "JustSteveKing\\Laravel\\ERP\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "JustSteveKing\\Laravel\\ERP\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "role": "Developer",
@@ -16,8 +21,13 @@
             "homepage": "https://www.juststeveking.uk/"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": "^8.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
     }
 }
