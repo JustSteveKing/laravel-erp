@@ -14,10 +14,27 @@ You can install the package via composer:
 composer require juststeveking/laravel-erp
 ```
 
+### Migrations
+
+You can publish and run the migrations with:
+
+```bash
+php artisan vendor:publish --provider="JustSteveKing\Laravel\ERP\ERPServiceProvider" --tag="erp-migrations"
+php artisan migrate
+```
+
+### Configuration
+
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --provider="JustSteveKing\Laravel\ERP\ERPServiceProvider" --tag="erp-config"
+```
+
+This is the contents of the published config file:
+
+```php
+return [];
 ```
 
 ## Testing
