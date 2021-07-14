@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/contracts": "^8.49",
+        "illuminate/contracts": "^8.4",
         "juststeveking/laravel-erp-contracts": "dev-main",
         "spatie/laravel-package-tools": "^1.9",
         "symfony/process": "^5.3"
