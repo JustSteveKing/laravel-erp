@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace JustSteveKing\Laravel\ERP;
 
+use JustSteveKing\Laravel\ERP\Commands\EnableModuleCommand;
 use JustSteveKing\Laravel\ERP\Commands\InstallModuleCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -18,6 +19,7 @@ class ERPServiceProvider extends PackageServiceProvider
             migrationFileName: 'create_erp_module_table',
         )->hasCommands(
             InstallModuleCommand::class,
+            EnableModuleCommand::class,
         );
     }
 }
