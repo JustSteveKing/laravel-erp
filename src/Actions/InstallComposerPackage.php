@@ -9,7 +9,7 @@ use Symfony\Component\Process\Process;
 
 class InstallComposerPackage
 {
-    public function handle(string $module): void
+    public static function handle(string $module): void
     {
         $process = new Process(
             command: [

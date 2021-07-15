@@ -33,4 +33,11 @@ class Module extends Model
             'enabled' => true,
         ])->save();
     }
+
+    public function disable(): void
+    {
+        $this->forceFill([
+            'enabled' => false,
+        ])->save();
+    }
 }

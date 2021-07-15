@@ -35,16 +35,13 @@ class EnableModuleCommand extends Command
                         parameters: ['module' => $module],
                     );
 
-                    Artisan::call(
-                        command: 'module:enable',
-                        parameters: ['module' => $module],
+                    $installedModule = CheckModuleIsInstalled::handle(
+                        module: $module,
                     );
                 } catch (Throwable $exception) {
                     throw $exception;
                 }
             }
-
-            return Command::SUCCESS;
         }
 
         $installedModule->enable();
