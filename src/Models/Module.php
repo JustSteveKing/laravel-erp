@@ -26,4 +26,11 @@ class Module extends Model
     protected $attributes = [
         'enabled' => true,
     ];
+
+    public function enable(): void
+    {
+        $this->forceFill([
+            'enabled' => true,
+        ])->save();
+    }
 }

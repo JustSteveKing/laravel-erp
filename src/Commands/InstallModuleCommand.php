@@ -17,8 +17,6 @@ class InstallModuleCommand extends Command
 
     public function handle(): int
     {
-        $this->info($this->argument('module'));
-
         ValidateModuleName::handle(
             module: $this->argument('module'),
         );
