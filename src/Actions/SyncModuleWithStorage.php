@@ -28,9 +28,9 @@ class SyncModuleWithStorage
         $module->author_name = data_get($author, 'name');
         $module->author_url = data_get($author, 'homepage');
         $module->module_url = data_get($json, 'homepage', "https://packagist.org/packages/{$module}");
-//        $module->version = InstalledVersions::getVersion(
-//            packageName: $module,
-//        );
+        $module->version = InstalledVersions::getVersion(
+            packageName: $module->name,
+        );
         $module->save();
 
         $installClass = $json['extra']['laravel-erp']['installer'] ?? null;
