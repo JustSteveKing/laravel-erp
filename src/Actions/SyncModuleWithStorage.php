@@ -19,7 +19,7 @@ class SyncModuleWithStorage
         ]);
 
         $json = json_decode(file_get_contents(base_path(
-            "vendor/{$module}/composer.json",
+            "vendor/{$module->name}/composer.json",
         )), true);
 
         $author = collect($json['authors'])->first();
