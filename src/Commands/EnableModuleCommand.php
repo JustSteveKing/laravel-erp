@@ -32,12 +32,12 @@ class EnableModuleCommand extends Command
                 try {
                     Artisan::call(
                         command: 'module:install',
-                        parameters: [$module],
+                        parameters: ['module' => $module],
                     );
 
                     Artisan::call(
                         command: 'module:enable',
-                        parameters: [$module],
+                        parameters: ['module' => $module],
                     );
                 } catch (Throwable $exception) {
                     throw $exception;
