@@ -71,9 +71,13 @@ class SyncModuleWithStorage
 
     private static function failed(string $message, Module $module)
     {
-        $module->forceFill([
-            'enabled' => false,
-        ])->save();
+        try {
+            $module->forceFill([
+                'enabled' => false,
+            ])->save();
+        } catch (Throwable) {
+            //
+        }
 
         throw new InvalidArgumentException(
             message: $message,

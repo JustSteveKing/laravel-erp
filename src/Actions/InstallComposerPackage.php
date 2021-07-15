@@ -24,7 +24,5 @@ class InstallComposerPackage
         );
 
         $process->mustRun();
-
-        // module should trigger post install....
     }
 }
