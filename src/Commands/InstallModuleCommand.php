@@ -21,7 +21,10 @@ class InstallModuleCommand extends Command
             module: $this->argument('module'),
         );
 
-        InstallComposerPackage::handle(
+        /** @var InstallComposerPackage $action */
+        $action = resolve(InstallComposerPackage::class);
+
+        $action->handle(
             module: $this->argument('module'),
         );
 

@@ -9,9 +9,13 @@ use Symfony\Component\Process\Process;
 
 class InstallComposerPackage
 {
-    public static function handle(string $module): void
+    public function __construct(
+        private Process|null $process = null,
+    ) {}
+
+    public function handle(string $module): void
     {
-        $process = new Process(
+        $process = $this->process ?? new Process(
             command: [
                 (new ExecutableFinder)->find(
                     name: 'composer',
@@ -20,7 +24,7 @@ class InstallComposerPackage
                 'require',
                 $module,
                 '--no-interaction',
-             ],
+            ],
         );
 
         $process->mustRun();
