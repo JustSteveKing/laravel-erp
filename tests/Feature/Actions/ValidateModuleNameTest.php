@@ -1,13 +1,9 @@
 <?php
 
 use Illuminate\Http\Client\RequestException;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 use JustSteveKing\Laravel\ERP\Actions\ValidateModuleName;
-use JustSteveKing\Laravel\ERP\Tests\Feature\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-
-uses(TestCase::class);
 
 it('throws an InvalidArgumentException if the module name is found to be invalid locally', function(string $moduleName) {
     ValidateModuleName::handle(module: $moduleName);
