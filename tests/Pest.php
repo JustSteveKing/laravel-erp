@@ -75,9 +75,16 @@ function getFixture(string $name): string
 
 function runDiscoverCommand()
 {
+    $basePath = app()->basePath();
+
+    app()->setBasePath(dirname(__DIR__));
+
     Artisan::call(
         command: DiscoverModulesCommand::class,
     );
+
+    app()->setBasePath($basePath);
+
 
     return test();
 }
