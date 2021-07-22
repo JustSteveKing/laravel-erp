@@ -2,21 +2,18 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\ERP\Tests\Feature;
+namespace JustSteveKing\Laravel\ERP\Tests;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use JustSteveKing\Laravel\ERP\ERPServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
-class TestCase extends Orchestra
+abstract class TestCase extends Orchestra
 {
-    use RefreshDatabase;
-
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     protected function getPackageProviders($app): array
@@ -38,5 +35,4 @@ class TestCase extends Orchestra
             ]
         );
     }
-
 }

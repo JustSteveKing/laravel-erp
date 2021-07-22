@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
 use JustSteveKing\Laravel\ERP\Commands\DiscoverModulesCommand;
@@ -19,6 +20,10 @@ use Symfony\Component\HttpFoundation\Response;
 */
 
 uses(TestCase::class)->in('Unit');
+uses(
+    \JustSteveKing\Laravel\ERP\Tests\TestCase::class,
+    RefreshDatabase::class,
+)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
