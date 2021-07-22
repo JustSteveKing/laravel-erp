@@ -7,7 +7,6 @@ namespace JustSteveKing\Laravel\ERP\Actions;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 use InvalidArgumentException;
-use JustSteveKing\Laravel\ERP\DataTransferObjects\Package;
 
 class ValidateModuleName
 {
