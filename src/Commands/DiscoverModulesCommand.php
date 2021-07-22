@@ -20,28 +20,30 @@ class DiscoverModulesCommand extends Command
             string: 'Fetching all installed packages.',
         );
 
-        $installed = json_decode(
-            json: file_get_contents(
-                filename: base_path() . '/vendor/composer/installed.json',
-            ),
-            associative: true,
-        );
+        if (file_exists(base_path() . '/vendor/composer/installed.json')) {
+            $installed = json_decode(
+                json: file_get_contents(
+                          filename: base_path() . '/vendor/composer/installed.json',
+                      ),
+                associative: true,
+            );
 
-        $this->info(
-            string: 'Retrieved packages, checking for erp modules that need enabling.',
-        );
+            $this->info(
+                string: 'Retrieved packages, checking for erp modules that need enabling.',
+            );
 
-        collect(
-            value: $installed['packages'],
-        )->filter(
-            fn($package) => data_get($package, 'extra.laravel-erp')
-        )->each(
-            fn($module) => SyncModuleWithStorage::handle(module: $module['name'])
-        );
+            collect(
+                value: $installed['packages'],
+            )->filter(
+                fn($package) => data_get($package, 'extra.laravel-erp')
+            )->each(
+                fn($module) => SyncModuleWithStorage::handle(module: $module['name'])
+            );
 
-        $this->info(
-            string: 'All erp modules have been discovered.',
-        );
+            $this->info(
+                string: 'All erp modules have been discovered.',
+            );
+        }
 
         return Command::SUCCESS;
     }
