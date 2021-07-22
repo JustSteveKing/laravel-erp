@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
+use JustSteveKing\Laravel\ERP\Commands\DiscoverModulesCommand;
 use JustSteveKing\Laravel\ERP\Models\Module;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
@@ -64,4 +66,13 @@ function getFixture(string $name): string
     return file_get_contents(
         __DIR__ . "/Fixtures/{$name}.json",
     );
+}
+
+function runDiscoverCommand()
+{
+    Artisan::call(
+        command: DiscoverModulesCommand::class,
+    );
+
+    return test();
 }
