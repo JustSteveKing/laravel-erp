@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a9b92d758e299684032570f9f06ed88",
+    "content-hash": "f113995e1d90d890314bc0c44c4a3cdb",
     "packages": [
         {
             "name": "brick/math",
@@ -4873,6 +4873,81 @@
                 "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
             "time": "2021-06-30T20:03:07+00:00"
+        },
+        {
+            "name": "juststeveking/laravel-erp-crm",
+            "version": "0.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JustSteveKing/laravel-erp-crm.git",
+                "reference": "48306f660c977b40fb8ccc3f11819234ad68d199"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JustSteveKing/laravel-erp-crm/zipball/48306f660c977b40fb8ccc3f11819234ad68d199",
+                "reference": "48306f660c977b40fb8ccc3f11819234ad68d199",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.37",
+                "juststeveking/laravel-erp-contracts": "dev-main",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.4.3"
+            },
+            "require-dev": {
+                "brianium/paratest": "^6.2",
+                "nunomaduro/collision": "^5.3",
+                "orchestra/testbench": "^6.15",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.23",
+                "vimeo/psalm": "^4.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JustSteveKing\\Laravel\\ERP\\CRM\\CRMServiceProvider"
+                    ]
+                },
+                "laravel-erp": {
+                    "installer": "JustSteveKing\\Laravel\\ERP\\CRM\\ModuleInstaller"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JustSteveKing\\Laravel\\ERP\\CRM\\": "src",
+                    "JustSteveKing\\Laravel\\ERP\\CRM\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve McDougall",
+                    "email": "juststevemcd@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel ERP Module providing CRM functionality",
+            "homepage": "https://github.com/juststeveking/laravel-erp-crm",
+            "keywords": [
+                "JustSteveKing",
+                "laravel",
+                "laravel-erp-crm"
+            ],
+            "support": {
+                "issues": "https://github.com/JustSteveKing/laravel-erp-crm/issues",
+                "source": "https://github.com/JustSteveKing/laravel-erp-crm/tree/0.0.9"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/JustSteveKing",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-07-19T07:50:08+00:00"
         },
         {
             "name": "myclabs/deep-copy",
