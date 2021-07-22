@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace JustSteveKing\Laravel\ERP\Commands;
 
-use Composer\InstalledVersions;
 use Illuminate\Console\Command;
 use JustSteveKing\Laravel\ERP\Actions\SyncModuleWithStorage;
 
