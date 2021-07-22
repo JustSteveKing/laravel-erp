@@ -24,7 +24,6 @@ class ValidateModuleName
             ]
         ])->validate();
 
-
         $response = Http::acceptJson()->get(
             url: "https://repo.packagist.org/p2/{$module}.json"
         );
