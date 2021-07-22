@@ -6,6 +6,7 @@ namespace JustSteveKing\Laravel\ERP\Commands;
 
 use Illuminate\Console\Command;
 use JustSteveKing\Laravel\ERP\Actions\CheckModuleIsInstalled;
+use JustSteveKing\Laravel\ERP\Events\ModuleDisabled;
 
 class DisableModuleCommand extends Command
 {
@@ -16,6 +17,10 @@ class DisableModuleCommand extends Command
     public function handle(): int
     {
         $module = $this->argument('module');
+
+        $this->line(
+            string: "Checking that module [$module] has been installed...",
+        );
 
         $installedModule = CheckModuleIsInstalled::handle(
             module: $module,
@@ -30,6 +35,12 @@ class DisableModuleCommand extends Command
         }
 
         $installedModule->disable();
+
+        ModuleDisabled::dispatch($module);
+
+        $this->info(
+            string: "Module [$module] has been disabled.",
+        );
 
         return Command::SUCCESS;
     }
