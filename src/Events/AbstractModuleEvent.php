@@ -8,7 +8,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-abstract class ModuleEvent
+abstract class AbstractModuleEvent
 {
     use Dispatchable;
     use SerializesModels;
