@@ -6,15 +6,25 @@ namespace JustSteveKing\Laravel\ERP\Actions;
 
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 
 class ValidateModuleName
 {
     /**
-     * @throws RequestException
+     * @throws RequestException|ValidationException
      */
     public static function handle(string $module): void
     {
+        Validator::make(['name' => $module], [
+            'name' => [
+                'string',
+                'regex:/^[-\w]+\/[-\w]+$/'
+            ]
+        ])->validate();
+
+
         $response = Http::acceptJson()->get(
             url: "https://repo.packagist.org/p2/{$module}.json"
         );
