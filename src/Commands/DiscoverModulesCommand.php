@@ -16,12 +16,19 @@ class DiscoverModulesCommand extends Command
 
     public function handle(): int
     {
-        // Get all installed packages from composer.
+        $this->line(
+            string: 'Fetching all installed packages.',
+        );
+
         $installed = json_decode(
             json: file_get_contents(
                 filename: base_path() . '/vendor/composer/installed.json',
             ),
             associative: true,
+        );
+
+        $this->info(
+            string: 'Retrieved packages, checking for erp modules that need enabling.',
         );
 
         collect(
@@ -30,6 +37,10 @@ class DiscoverModulesCommand extends Command
             fn($package) => data_get($package, 'extra.laravel-erp')
         )->each(
             fn($module) => SyncModuleWithStorage::handle(module: $module['name'])
+        );
+
+        $this->info(
+            string: 'All erp modules have been discovered.',
         );
 
         return Command::SUCCESS;
