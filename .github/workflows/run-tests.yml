@@ -45,3 +45,5 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/pest
+        env:
+          RUNNING_IN_CI: true

@@ -68,6 +68,15 @@ function getFixture(string $name): string
     );
 }
 
+function skipInCI(string $message = 'This test cann\'t run in CI')
+{
+    if(env('RUNNING_IN_CI')) {
+        $this->markTestSkipped($message);
+    }
+
+    return test();
+}
+
 function runDiscoverCommand()
 {
     Artisan::call(
